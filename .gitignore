@@ -1,23 +1,64 @@
-# Compiled class file
-*.class
+import java.util.*;
 
-# Log file
-*.log
+ // Compiler version JDK 11.0.2
 
-# BlueJ files
-*.ctxt
+ class Dcoder
+ {
+   
+   public static void calc(int number1,int number2){
+         
+float result;
+Scanner calculator = new Scanner(System.in);
+System.out.println("enter the operator: 1 for addition \n 2 for subtraction\n 3 for multiplication\n 4 for division\n 5 for module\n");
+int  n =calculator.nextInt();
+switch (n){
+  
+case 1:
+result = number1 + number2;
+System.out.println(number1+"+"+number2 +"="+result);
+break;
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+case 2:
+  result=number1-number2;
+System.out.println(number1+"-"+number2+"="+result);
+break;
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+case 3:
+  result=number1*number2;
+System.out.println(number1+"*"+number2+"="+result);
+break;
+case 4: 
+  if (number2==0){
+    System.out.print("Invalid division\n");
+    
+  } else { result=number1/number2;
+    System.out.print(number1+"/"+number2 +"="+result);
+  }
+  break;
+  
+  case 5: 
+    if(number2==0){
+      System.out.print("invalid division \n");
+      
+    } else{ 
+       System.out.println("module of numbers "+number1+" is of "+number2+" is : \n"+(number1%number2));
+  }       break;
+ default: System.out.print("invalid operator!");
+ }
+   }
+   
+   public static void main(String args[])
+   { 
+      int input;
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter first number: ");
+      int number1=sc.nextInt();
+      System.out.println("Enter second number: ");
+      int number2=sc.nextInt();
+   do {  calc(number1,number2);
+      
+  System.out.println(" \nIf you want to continue so press 1 for (yes) or press 0 for no :");
+       input=sc.nextInt();
+      } while (input==1);
+         }
+ }
